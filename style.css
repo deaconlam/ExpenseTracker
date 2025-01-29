@@ -46,12 +46,16 @@ body {
 }
 
 .oobe {
-    margin: auto;
-    -ms-transform: translateY(50%);
-    transform: translateY(50%);
+    margin-top: 200px;
     user-select: none;
     display: grid;
+    transition: opacity 0.2s ease, transform 2s ease;
 }
+
+.oobe.fade {
+    opacity: 0;
+    transform: translateX(-100%);
+    }
 
 .oobe_title {
     font-size: 48px;

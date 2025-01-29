@@ -19,12 +19,15 @@ function onload() {
 
 function username() {
     event.preventDefault()
-    var username = document.getElementById("oobe_name").value.trim();
-    if (username === "") {
-        document.getElementById("oobe").reportValidity()
-        return;
-    }
-    experience(username)
+    document.getElementById('oobe').classList.toggle('fade')
+    setTimeout(() => {
+        var username = document.getElementById("oobe_name").value.trim();
+        if (username === "") {
+            document.getElementById("oobe").reportValidity()
+            return;
+        }
+        experience(username)
+    }, 250);
 }
 
 function experience(username) {
@@ -45,7 +48,7 @@ function experience(username) {
     }
     document.getElementById("login_text").innerHTML = username;
     document.getElementById('oobe').style.display = 'none';
-    document.getElementById('body').style.display = 'flex';
+    document.getElementById('body').style.display = 'grid';
     document.getElementById('login_div').style.display = 'flex';
     localStorage.setItem("username", username);
 }
