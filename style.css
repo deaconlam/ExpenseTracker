@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: Google Sans;
+}
+
+.title {
+    padding-left: 30px;
+    user-select: none;
+    color: white;
+    font-size: 24px;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+.horizontal-menu {
+    display: flex;
+    background-color: green;
+}
+
+.login_div {
+    display: flex;
+    margin: 0 30px 0 auto;
+    align-items: center;
+}
+
+.login_div:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.login_img {
+    width: 38px;
+    height: 38px;
+    padding-right: 10px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.login_text {
+    color: white;
+}
