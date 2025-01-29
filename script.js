@@ -5,27 +5,15 @@ input.addEventListener("keydown", function(event) {
     }
 });
 
-function check() {
+function onload() {
     var saved_username = localStorage.getItem("username")
-    var d = new Date();
-    var currtime = d.getHours() * 100 + d.getMinutes();
-    if (saved_username != null) {
-        if (currtime > 0) {
-            document.getElementById("welcome").innerHTML = "Good evening, " + saved_username;
-        }
-        if (currtime > 600) {
-            document.getElementById("welcome").innerHTML = "Good morning, " + saved_username;
-        }
-        if (currtime > 1200) {
-            document.getElementById("welcome").innerHTML = "Good afternoon, " + saved_username;
-        }
-        if (currtime > 1800) {
-            document.getElementById("welcome").innerHTML = "Good evening, " + saved_username;
-        }
-        document.getElementById("login_text").innerHTML = saved_username;
-        document.getElementById('oobe').style.display = 'none';
-        document.getElementById('body').style.display = 'flex';
-        document.getElementById('login_div').style.display = 'flex';
+    if (saved_username === null) {
+        document.getElementById('oobe').style.display = 'grid';
+        document.getElementById('body').style.display = 'none';
+        document.getElementById('login_div').style.display = 'none';
+    }
+    else {
+        experience(saved_username)
     }
 }
 
@@ -36,6 +24,11 @@ function username() {
         document.getElementById("oobe").reportValidity()
         return;
     }
+    experience(username)
+}
+
+function experience(username) {
+    document.title = "Expense Tracking System"
     var d = new Date();
     var currtime = d.getHours() * 100 + d.getMinutes();
     if (currtime > 0) {
