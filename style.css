@@ -10,22 +10,18 @@ body {
     font-size: 24px;
 }
 
-.title:hover {
-    cursor: pointer;
-}
-
 .horizontal-menu {
     display: flex;
     background-color: green;
 }
 
 .login_div {
-    display: flex;
+    display: none;
     margin: 0 30px 0 auto;
     align-items: center;
 }
 
-.login_div:hover {
+.oobe_button:hover {
     cursor: pointer;
     opacity: 0.8;
 }
@@ -43,56 +39,52 @@ body {
     user-select: none;
 }
 
-.login-menu {
-    background-color: lightgrey;
-    width: 500px;
-    height: 375px;
-    border-radius: 37.5px;
-    display: grid;
+.welcome {
+    font-size: 36px;
+    padding-left: 30px;
+    user-select: none;
+}
+
+.oobe {
     margin: auto;
     -ms-transform: translateY(50%);
     transform: translateY(50%);
     user-select: none;
+    display: grid;
 }
 
-.login_title {
-    padding-top: 30px;
-    padding-left: 30px;
+.oobe_title {
+    font-size: 48px;
+    padding-left: 100px;
+}
+
+.oobe_description {
+    padding-left: 100px;
+    font-size: 20px;
+}
+
+.oobe_name {
+    margin-left: 100px;
+    width: 500px;
+    height: 50px;
     font-size: 24px;
-}
-
-.login_username {
-    margin: 0px 20px;
-    padding-left: 15px;
-    height: 37.5px;
     border-radius: 12.5px;
-    border: none;
-    box-shadow: 1px 1px grey;
+    border: solid;
+    border-color: lightgrey;
+    border-width: 2px;
     font-family: Google Sans;
-    font-size: 16px;
+    padding-left: 20px;
 }
 
-.login_username:focus {
+.oobe_name:focus {
     outline-color: green;
 }
 
-.login_password {
-    margin: 0px 20px;
-    padding-left: 15px;
-    height: 37.5px;
-    border-radius: 12.5px;
-    border: none;
-    box-shadow: 1px 1px grey;
-    font-family: Google Sans;
-    font-size: 16px;
-}
-
-.login_password:focus {
-    outline-color: green;
-}
-
-.login_button {
-    margin: 0px 20px;
+.oobe_button {
+    margin-left: 100px;
+    margin-top: 75px;
+    width: 125px;
+    height: 50px;
     border-radius: 12.5px;
     border: none;
     background-color: green;
@@ -101,20 +93,6 @@ body {
     font-size: 16px;
 }
 
-.login_button:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-.login_create {
-    padding-left: 30px;
-    padding-top: 25px;
-    height: 10px;
-    color: green;
-    font-size: 16px;
-}
-
-.login_create:hover {
-    cursor: pointer;
-    opacity: 0.8;
+.body {
+    display: none;
 }

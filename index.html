@@ -7,14 +7,35 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico">
   <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans+Text:400,500,700,400i,500i,700i|Google+Sans:400,500|Google+Sans+Display:400|Product+Sans:400&amp;lang=en" rel="stylesheet" nonce="">
+  <script src="script.js"></script>
 </head>
-<body>
+<body onload="check()">
+  <script>
+    var input = document.getElementById("oobe_name");
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("oobe_button").click();
+        }
+    });
+  </script>
   <div class="horizontal-menu">
-    <p class="title" onclick="location.href = 'index.html'">Expense Tracking System</p>
-    <div class="login_div" onclick="location.href = 'login.html'">
+    <p class="title">Expense Tracking System</p>
+    <div class="login_div" id="login_div">
       <img class="login_img" src="login.png">
-      <p class="login_text">Login</p>
+      <p class="login_text" id="login_text">defaultuser0</p>
     </div>
   </div>
+  <form class="oobe" id="oobe">
+    <p class="oobe_title">Welcome</p>
+    <p class="oobe_description">Enter your name</p>
+    <input type="text" class="oobe_name" id="oobe_name" required>
+    <input type="submit" class="oobe_button" id="oobe_button" onclick="username()" value="Get Started">
+  </form>
+  </div>
+  <div class="body" id="body">
+    <p class="welcome" id="welcome">Good morning, defaultuser0</p>
+  </div>
+  <button onclick = "reset()">reset</button>
 </body>
 </html>
