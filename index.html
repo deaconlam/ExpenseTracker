@@ -10,16 +10,7 @@
   <script src="script.js"></script>
 </head>
 <body onload="onload()">
-  <script>
-    var input = document.getElementById("oobe_name");
-    input.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            document.getElementById("oobe_button").click();
-        }
-    });
-  </script>
-  <div class="horizontal-menu">
+  <div class="horizontal-menu" id="horizontal-menu">
     <p class="title">Expense Tracking System</p>
     <div class="login_div" id="login_div">
       <img class="login_img" src="login.png">
@@ -35,9 +26,19 @@
   </div>
   <div class="body" id="body">
     <p class="welcome" id="welcome"></p>
-    <p>Dashboard</p>
-    <div class="">January $0</div>
-    <p>Total Expenses</p>
+    <p class="dashboard">Dashboard</p>
+    <div class="dashboard_summary">
+      <div class="dashboard_left">
+        <p class="dashboard_title" id="month"></p>
+        <p class="dashboard_content">$ -</p>
+      </div>
+      <div class="dashboard_right">
+        <p class="dashboard_title">Total Expenses</p>
+        <p class="dashboard_content">$ -</p>
+      </div>
+    </div>
+    <p class="all_expenses">All Expenses</p>
+    <button class="add_expenses">Add New Expenses</button>
     <button onclick = "reset()">reset</button>
   </div>
 </body>

@@ -1,11 +1,8 @@
-var input = document.getElementById("oobe_name");
-input.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        document.getElementById("oobe_button").click();
-    }
-});
-
 function onload() {
+    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const d = new Date();
+    let name = month[d.getMonth()];
+    document.getElementById("month").innerHTML = name;
     var saved_username = localStorage.getItem("username")
     if (saved_username === null) {
         document.getElementById('oobe').style.display = 'grid';
@@ -19,13 +16,13 @@ function onload() {
 
 function username() {
     event.preventDefault()
+    var username = document.getElementById("oobe_name").value.trim();
+    if (username === "") {
+        document.getElementById("oobe").reportValidity()
+        return;
+    }
     document.getElementById('oobe').classList.toggle('fade')
     setTimeout(() => {
-        var username = document.getElementById("oobe_name").value.trim();
-        if (username === "") {
-            document.getElementById("oobe").reportValidity()
-            return;
-        }
         experience(username)
     }, 250);
 }
@@ -50,6 +47,7 @@ function experience(username) {
     document.getElementById('oobe').style.display = 'none';
     document.getElementById('body').style.display = 'grid';
     document.getElementById('login_div').style.display = 'flex';
+    document.getElementById('horizontal-menu').style.position = 'fixed';
     localStorage.setItem("username", username);
 }
 
